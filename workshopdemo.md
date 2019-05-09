@@ -1,4 +1,4 @@
-#Workshop stappen
+# Workshop stappen
 
 Het doel is om een webapi te maken, die werkt met EF.
 We gaan database first een applicatie scaffolden.
@@ -11,26 +11,26 @@ https://codeshare.io/aYOlkm
 [2] Maak een dotnet webapi 
 
 ```bash
-dotnet new webapi
+$ dotnet new webapi
 ```
 
 [3] Installeer de ef-core commandline tool
 
 ```bash
-ef-core dotnet tool install --global dotnet-ef --version 3.0.0-preview4.19216.3
+$ ef-core dotnet tool install --global dotnet-ef --version 3.0.0-preview4.19216.3
 ```
 
 [4] Voeg de packages toe. Zie link voor de correcte packages: https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/3.0.0-preview3.19153.1
 
 ```bash
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 3.0.0-preview3.19153.
-dotnet add package Microsoft.EntityFrameworkCore.Design --version 3.0.0-preview3.19153.1
+$ dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 3.0.0-preview3.19153.
+$ dotnet add package Microsoft.EntityFrameworkCore.Design --version 3.0.0-preview3.19153.1
 ```
 
 [5] Scaffold de database in de applicatie
 
 ```bash
-dotnet ef dbcontext scaffold "Server=localhost;Database=WorkshopDB;User ID=sa;Password=Password1" Microsoft.EntityFrameworkCore.SqlServer -o Entities
+$ dotnet ef dbcontext scaffold "Server=localhost;Database=WorkshopDB;User ID=sa;Password=Password1" Microsoft.EntityFrameworkCore.SqlServer -o Entities
 ```
 
 [6] Dotnet heeft nu de connectiestring in de DBContext gezet. Dit is sensitive data exposure. Om dit op te lossen moet je het in je settings zetten.
